@@ -66,7 +66,7 @@ set shm=filmnrwxt               "SHortMessages: encurta as mensagem do rodape
 set et                          "ExpandTab: troca TABs por espacos
 set ruler                       "mostra a posicao do cursor, regua
 set laststatus=2                "mostra N linhas de estado (status)
-set textwidth=79                "quebra de linha
+set textwidth=120               "quebra de linha
 set bs=0                        "comportamento do backspace
 set nosmartindent               "desligando pois esta padrao no CL40
 set visualbell                  "pisca a tela ao inves de bipar
@@ -100,7 +100,7 @@ au FileType python inoremap " ""<LEFT>
 au FileType python inoremap ' ''<LEFT>
 au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
 "Mostra caracteres que passaram de 80 colunas
-au FileType python highlight OverLength ctermbg=lightblue ctermfg=black guibg=#592929
+au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%81v.*/
 
 " Php: Autocomplete e outras configuracoes
