@@ -111,6 +111,14 @@ au FileType php inoremap " ""<LEFT>
 au FileType php inoremap ' ''<LEFT>
 au FileType php set complete-=k/home/cesar/.vim/doc/php/php.txt complete+=k/home/cesar/.vim/doc/php/php.txt
 
+" Css: Autocomplete e outras configuracoes
+au FileType css inoremap [ []<LEFT>
+au FileType css inoremap { {}<LEFT>
+au FileType css inoremap ( ()<LEFT>
+au FileType css inoremap " ""<LEFT>
+au FileType css inoremap ' ''<LEFT>
+au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
+
 " Mostra os espaços em branco inuteis no final da linha 
 au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 
