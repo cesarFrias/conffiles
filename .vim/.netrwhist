@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/cesar/Área de Trabalho/pomodoro4lin'
-let g:netrw_dirhist_2='/etc/apache2/sites-enabled'
-let g:netrw_dirhist_3='/media/UBUNTU-WINDOWS/TECNOLOGIA DA INFORMAÇÃO/PYTHON'
-let g:netrw_dirhist_4='/media/UBUNTU-WINDOWS/Projetos/conffiles/.git/info'
-let g:netrw_dirhist_5='/media/UBUNTU-WINDOWS/Projetos/pomodoro4linux'
