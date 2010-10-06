@@ -120,3 +120,6 @@ alias cler='clear'
 
 # cleasr --> Comando clear
 alias cleasr='clear'
+
+# limpyc --> Limpa os arquivos pyc
+alias limpyc='find ./ -name "*.pyc" | xargs rm -v'
