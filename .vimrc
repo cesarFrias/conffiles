@@ -68,7 +68,8 @@ set ruler                       "mostra a posicao do cursor, regua
 set laststatus=2                "mostra N linhas de estado (status)
 set textwidth=120               "quebra de linha
 set bs=2                        "comportamento do backspace
-set nosmartindent               "desligando pois esta padrao no CL40
+"set nosmartindent               "desligando pois esta padrao no CL40
+set smartindent               "desligando pois esta padrao no CL40
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
@@ -166,7 +167,7 @@ function ToggleFold()
       "execute "normal i" . l_min . "," . l . " fold" " print debug info
 
       if l > l_min
-" " Create the fold from l_min to l
+    " " Create the fold from l_min to l
          execute l_min . "," . l . " fold"
       endif
    else
