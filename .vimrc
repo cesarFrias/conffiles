@@ -20,9 +20,6 @@ map ,tm :%s/\r//g<cr>
 " SubstituiTabPorEspaço: Substitui os caracteres \t (tab) por 4 espaços 
 map ,ste :%s/\t/    /g<cr>       
 
-" Acrescenta uma tabulação de 4 espaços
-map ,at :%s/^\(\(\s\\|d\)\)/    \1/<cr>
-
 " Acrescenta linha de comentário funcional UTF-8
 map ,utf i# -*- coding: utf-8 -*-<cr>
 
@@ -68,8 +65,7 @@ set ruler                       "mostra a posicao do cursor, regua
 set laststatus=2                "mostra N linhas de estado (status)
 set textwidth=120               "quebra de linha
 set bs=2                        "comportamento do backspace
-"set nosmartindent               "desligando pois esta padrao no CL40
-set smartindent               "desligando pois esta padrao no CL40
+set nosmartindent               "desligando pois esta padrao no CL40
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
