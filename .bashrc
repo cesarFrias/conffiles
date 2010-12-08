@@ -124,4 +124,6 @@ alias cleasr='clear'
 # limpyc --> Limpa os arquivos pyc
 alias limpyc='find ./ -name "*.pyc" | xargs rm -v'
 
+# conflitos --> Procura por conflitos em arquivos versionados
+alias conflitos='grep -RE '(>>>|<<<|===)' ./'
 PS1='\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:[\W]\$ '
