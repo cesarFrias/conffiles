@@ -1,0 +1,9 @@
+[user]
+	name = César Frias
+	email = cagfrias@gmail.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    pager = true
+    ui = auto
