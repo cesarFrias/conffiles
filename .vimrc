@@ -211,7 +211,7 @@ def set_skip_test():
     #Corrige indentacao (pode nao ter linhas apos a definicao da funcao)
     vim.current.buffer.append(indentation + SKIP_TEST_STRING, skip_line)
 
-vim.command('map ,skp :py set_skip_test()<cr>')
+vim.command('map ,skp :py set_skip_test()<cr>:set nohlsearch<cr>')
 
 def killall_skip_test():
     command = "g/^ *%s/d" % SKIP_TEST_STRING 
