@@ -178,3 +178,45 @@ map <F8> :NERDTree<return>
 map <F9> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+python << EOF
+# Enquanto não encontrar end of file vai interpretar python
+import vim
+import re
+
+IPDB_STRING = "import ipdb; ipdb.set_trace()"
+
+def set_ipdb():
+    ipdb_line = int(vim.eval("line('.')"))
+    current_line = vim.current.line
+    indentation = re.search("^ *", current_line).group()
+    vim.current.buffer.append(indentation + IPDB_STRING, ipdb_line)
+
+vim.command('map ,pdb :py set_ipdb()<cr>')
+
+def killall_ipdb():
+    command = "g/^ *%s$/d" % IPDB_STRING
+    vim.command(command)
+
+vim.command('map ,kpdb :py killall_ipdb()<cr>:set nohlsearch<cr>')
+
+SKIP_TEST_STRING = "from nose.plugins.skip import SkipTest; raise SkipTest()"
+
+def set_skip_test():
+    function_starts = "?def"
+    vim.command(function_starts)
+    skip_line = int(vim.eval("line('.')"))
+    current_line = vim.current.line
+    indentation = re.search("^ *", current_line).group()
+    indentation += '    '
+    #Corrige indentacao (pode nao ter linhas apos a definicao da funcao)
+    vim.current.buffer.append(indentation + SKIP_TEST_STRING, skip_line)
+
+vim.command('map ,skp :py set_skip_test()<cr>')
+
+def killall_skip_test():
+    command = "g/^ *%s/d" % SKIP_TEST_STRING 
+    vim.command(command)
+
+vim.command('map ,kskp :py killall_skip_test()<cr>:set nohlsearch<cr>')
+
+EOF
