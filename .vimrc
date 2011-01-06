@@ -82,7 +82,7 @@ syn sync minlines=500   "nao faco ideia
 
 
 " TXT: Arquivos texto tem tratamento especial
-au BufNewFile,BufRead *.txt   set tw=120 ts=8 ft=txt "spell
+au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 
 " Python: TAB colorido e outras configuracoes
