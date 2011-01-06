@@ -178,6 +178,9 @@ map <F8> :NERDTree<return>
 map <F9> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+map ,rc :vsplit $MYVIMRC<cr>
+
+
 python << EOF
 # Enquanto não encontrar end of file vai interpretar python
 import vim
