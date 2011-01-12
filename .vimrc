@@ -100,6 +100,7 @@ au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-di
 "Mostra caracteres que passaram de 80 colunas
 au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%81v.*/
+"Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
 
 
@@ -225,5 +226,10 @@ def killall_skip_test():
 
 vim.command('map ,kskp :py killall_skip_test()<cr>')
 
+def making_functions_easier():
+    command = "?def"
+    vim.command(command)
+
+vim.command('au FileType python syn match def making_functions_easier()')
 EOF
 
