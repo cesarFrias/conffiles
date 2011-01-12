@@ -85,6 +85,7 @@ syn sync minlines=500   "nao faco ideia
 au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 
+
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
@@ -99,6 +100,8 @@ au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-di
 "Mostra caracteres que passaram de 80 colunas
 au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%81v.*/
+au FileType python inoremap <S-Tab> :<<cr>i
+
 
 " Php: Autocomplete e outras configuracoes
 au FileType php inoremap [ []<LEFT>
@@ -175,7 +178,7 @@ endfunction
 nmap <space> :call ToggleFold()<CR>
 
 map <F8> :NERDTree<return>
-map <F9> :NERDTreeToggle<return>
+map <F8> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 map ,rc :vsplit $MYVIMRC<cr>
@@ -223,3 +226,4 @@ def killall_skip_test():
 vim.command('map ,kskp :py killall_skip_test()<cr>')
 
 EOF
+
