@@ -226,10 +226,4 @@ def killall_skip_test():
 
 vim.command('map ,kskp :py killall_skip_test()<cr>')
 
-def making_functions_easier():
-    command = "?def"
-    vim.command(command)
-
-vim.command('au FileType python syn match def making_functions_easier()')
 EOF
-
