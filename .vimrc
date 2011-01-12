@@ -193,7 +193,7 @@ import re
 IPDB_STRING = "import ipdb; ipdb.set_trace()"
 
 def set_ipdb():
-    ipdb_line = int(vim.eval("line('.')"))
+    ipdb_line = int(vim.eval("line('.')")) - 1
     current_line = vim.current.line
     indentation = re.search("^ *", current_line).group()
     vim.current.buffer.append(indentation + IPDB_STRING, ipdb_line)
