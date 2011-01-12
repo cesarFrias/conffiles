@@ -178,8 +178,8 @@ endfunction
 
 nmap <space> :call ToggleFold()<CR>
 
-map <F8> :NERDTree<return>
-map <F8> :NERDTreeToggle<return>
+map <F9> :NERDTree<return>
+map <F9> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 map ,rc :vsplit $MYVIMRC<cr>
