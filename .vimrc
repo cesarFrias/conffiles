@@ -34,6 +34,8 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 noremap <F2> :hi Comment ctermfg=black guifg=black<cr>
 noremap <F3> :hi Comment term=bold ctermfg=cyan guifg=cyan<cr>
 
+map <F4> V:s/ *\([^d\.f ]\) /\1_/g<cr>
+
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
 hi IncSearch ctermbg=black ctermfg=cyan
