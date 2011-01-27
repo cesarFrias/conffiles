@@ -125,7 +125,7 @@ alias cleasr='clear'
 alias limpyc='find ./ -name "*.pyc" | xargs rm -v'
 
 # conflitos --> Procura por conflitos em arquivos versionados
-alias conflitos="grep -RE '(>>>|<<<|===)' ./"
+alias conflitos="grep -REn '(>>>|<<<|===)' ./"
 
 alias vi='vim '
 
