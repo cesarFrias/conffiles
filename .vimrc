@@ -77,6 +77,14 @@ retab                           "converter os TABs ja existentes
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
 
+"Mantendo minha sanidade mental
+cab Q q
+cab W w
+cab Wq wq
+cab wQ wq
+cab WQ wq
+
+
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
