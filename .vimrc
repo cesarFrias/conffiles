@@ -111,6 +111,12 @@ au FileType python match OverLength /\%81v.*/
 "Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
 
+"Algumas configurações automáticas para C
+au FileType c inoremap [ []<LEFT>
+au FileType c inoremap { {}<LEFT>
+au FileType c inoremap ( ()<LEFT>
+au FileType c inoremap " ""<LEFT>
+au FileType c inoremap ' ''<LEFT>
 
 " Php: Autocomplete e outras configuracoes
 au FileType php inoremap [ []<LEFT>
