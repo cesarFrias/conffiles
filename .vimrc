@@ -114,7 +114,7 @@ au FileType python inoremap <S-Tab> :<<cr>i
 
 "Algumas configurações automáticas para C
 au FileType c inoremap [ []<LEFT>
-au FileType c inoremap { {}<LEFT>
+au FileType c inoremap { {}<LEFT><CR><CR><UP>
 au FileType c inoremap ( ()<LEFT>
 au FileType c inoremap " ""<LEFT>
 au FileType c inoremap ' ''<LEFT>
