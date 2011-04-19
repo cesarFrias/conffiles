@@ -54,7 +54,7 @@ nmap g# g#zz
 set is hls ic scs magic         "opcoes espertas de busca
 set title                       "Mostra titulo do arquivo  
 set sm                          "ShowMatch: mostra o par do parenteses/chaves recem fechado
-set hid                         "HIDden: nao lembro pra que servia mas era massa
+set hid                         "HIDden: undo mesmo depois de trocar de buffer 
 set aw                          "AutoWrite: gravacao automatica a cada alteracao
 set ai                          "AutoIndent: identacao automatica
 set ts=4                        "TabStop: numero de caracteres de avanco do TAB
@@ -70,9 +70,10 @@ set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
 set wildmode=longest,list:full  "para completacao do TAB igual bash
-retab                           "converter os TABs ja existentes
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
+
+retab                           "converter os TABs ja existentes
 
 "Mantendo minha sanidade mental
 cab Q q
