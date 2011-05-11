@@ -100,18 +100,6 @@ fi
 
 # Configurando aliases
 
-# runserver --> Roda o servidor embutido do django com acesso externo
-alias runserver='python manage.py runserver 0.0.0.0:8080'
-
-# syncdb --> Realiza a sincronização do banco de dados
-alias syncdb='python manage.py syncdb'
-
-# startproject --> Inicia novo projeto
-alias startproject='django-admin startproject '
-
-# startapp --> Inicia novo aplicativo 
-alias startapp='django-admin startapp '
-
 # clera --> Comando clear
 alias clera='clear'
 
