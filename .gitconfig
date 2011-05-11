@@ -7,3 +7,5 @@
     branch = auto
     pager = true
     ui = auto
+[core]
+    editor = vim
