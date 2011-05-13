@@ -28,7 +28,7 @@ map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: César Fr
 
 map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
-map ,ns :set nospell
+map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
 " Para 'ocultar' e voltar os comentarios do arquivo atual
