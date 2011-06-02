@@ -28,6 +28,7 @@ map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: César Fr
 
 map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
+map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
 " Para 'ocultar' e voltar os comentarios do arquivo atual
@@ -111,6 +112,8 @@ au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%81v.*/
 "Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
+au FileType python syn keyword booleans True False
+au FileType python hi booleans ctermfg=blue
 
 "Algumas configurações automáticas para C
 au FileType c inoremap [ []<LEFT>
