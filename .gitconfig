@@ -8,9 +8,9 @@
     pager = true
     ui = auto
 [color "branch"]
-    current = yellow reverse
+    current = green reverse
     local = yellow
-    remote = green
+    remote = red
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
@@ -18,7 +18,7 @@
     new = green bold
 [color "status"]
     added = yellow
-    changed = green
-    untracked = cyan
+    changed = red
+    untracked = red reverse
 [core]
     editor = vim
