@@ -34,6 +34,10 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 " Para 'ocultar' e voltar os comentarios do arquivo atual
 noremap <F2> :hi Comment ctermfg=black guifg=black<cr>
 noremap <F3> :hi Comment term=bold ctermfg=cyan guifg=cyan<cr>
+"
+" Gundo - Graph undo tree
+nnoremap <F4> :GundoToggle<CR>
+let g:gundo_width = 30
 
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
@@ -245,3 +249,4 @@ def killall_skip_test():
 vim.command('map <F8> :py killall_skip_test()<cr>')
 
 EOF
+
