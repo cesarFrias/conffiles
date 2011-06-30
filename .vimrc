@@ -212,6 +212,8 @@ map <S-Right> <c-w>>
 map <S-Up> <c-w>+
 map <S-Down> <c-w>-
 
+hi CursorLine cterm=None guifg=black ctermbg=black
+set cursorline
 
 python << EOF
 # Enquanto não encontrar end of file vai interpretar python
