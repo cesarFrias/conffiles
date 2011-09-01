@@ -26,6 +26,9 @@ map ,utf i# -*- coding: utf-8 -*-<cr>
 " Cabecalho: Mapeamento para inserir cabeçalho python
 map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: César Frias:r!date +"\%d/\%m/\%Y"<cr>i# Data: <end><cr><cr><cr>
 
+" Mapeamento para inserir if __name__ == '__main__' python
+map ,if :set paste<cr> iif __name__ == '__main__':<cr><esc>:set nopaste<cr>
+
 map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
