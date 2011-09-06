@@ -122,3 +122,8 @@ PS1='\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:[\W]\$ '
 alias rprune='git remote prune origin'
 
 alias activate='. bin/activate && . contrib/aliases.bash'
+
+if [ -e ~/.local_alias ]
+then
+    source ~/.local_alias
+fi
