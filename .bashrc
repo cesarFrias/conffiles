@@ -117,6 +117,8 @@ alias conflitos="grep -REn '(>>>|<<<|===)' ./"
 
 alias vi='vim '
 
+alias car='cat '
+
 PS1='\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:[\W]\$ '
 
 alias rprune='git remote prune origin'
