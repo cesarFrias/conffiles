@@ -80,6 +80,7 @@ set sw=4                        "numero de colunas para o comando > (ShiftWidth)
 set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
+set clipboard=unnamed           "usando clipboard do sistema como de costume
 
 retab                           "converter os TABs ja existentes
 
