@@ -118,9 +118,9 @@ au FileType python inoremap ( ()<LEFT>
 au FileType python inoremap " ""<LEFT>
 au FileType python inoremap ' ''<LEFT>
 au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
-"Mostra caracteres que passaram de 80 colunas
+"Mostra caracteres que passaram de 79 colunas
 au FileType python highlight OverLength ctermfg=red
-au FileType python match OverLength /\%81v.*/
+au FileType python match OverLength /\%80v.*/
 "Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python syn keyword booleans True False
