@@ -42,6 +42,9 @@ noremap <F3> :hi Comment term=bold ctermfg=cyan guifg=cyan<cr>
 nnoremap <F4> :GundoToggle<CR>
 let g:gundo_width = 30
 
+"PEP8
+let g:pep8_map='<F10>'
+
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
 hi IncSearch ctermbg=black ctermfg=cyan
