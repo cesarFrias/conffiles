@@ -128,6 +128,11 @@ then
     source ~/.local_alias
 fi
 
+if [ -e ~/.sieve_conf ]
+then
+    source ~/.sieve_conf
+fi
+
 #pip bash completion start
 _pip_completion()
 {
