@@ -273,12 +273,13 @@ def open_imported_file():
         else:
             module = import_line.split()[1]
         if module in os.sys.modules:
-            file_mod = os.sys.modules[module].__file__[:-1]
-            vim.command('split %s' % file_mod)
+            file_name = os.sys.modules[module].__file__
+            if file_name.endswith('pyc'):
+                vim.command('split %s' % file_name[:-1])
+            elif file_name.endswith('so'):
+                print u'Arquivo binário'
     except ImportError:
-        #caso possivel: usando virtualenv
-        #todo: permitir virtualenv
-        print 'Nao foi possível importar esse metodo'
+        print u'Não foi possível importar esse método'
 
 
 vim.command('map <C-S-O> :py open_imported_file()<cr>')     
