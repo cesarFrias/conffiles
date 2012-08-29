@@ -277,9 +277,9 @@ def open_imported_file():
             if file_name.endswith('pyc'):
                 vim.command('split %s' % file_name[:-1])
             elif file_name.endswith('so'):
-                print u'Arquivo binário'
-    except ImportError:
-        print u'Não foi possível importar esse método'
+                print 'Arquivo binário'
+    except ImportError, error:
+        print 'Não foi possível importar esse método (%s)' % error
 
 
 vim.command('map <C-S-O> :py open_imported_file()<cr>')     
