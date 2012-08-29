@@ -262,13 +262,24 @@ def killall_skip_test():
     vim.command(command)
 
 vim.command('map <F8> :py killall_skip_test()<cr>')
+
 import os
 def open_imported_file():
     import_line = vim.current.line
-    module = import_line.split()[-1]
-    if module in os.sys.modules:
-        file_mod = os.sys.modules[module].__file__[:-1]
-        vim.command('vsplit %s' % file_mod)
+    try:
+        exec(import_line)
+        if import_line.startswith('import'):
+            module = import_line.split()[-1]
+        else:
+            module = import_line.split()[1]
+        if module in os.sys.modules:
+            file_mod = os.sys.modules[module].__file__[:-1]
+            vim.command('split %s' % file_mod)
+    except ImportError:
+        #caso possivel: usando virtualenv
+        #todo: permitir virtualenv
+        print 'Nao foi possível importar esse metodo'
+
 
 vim.command('map <C-S-O> :py open_imported_file()<cr>')     
 
