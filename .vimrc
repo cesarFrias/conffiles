@@ -262,6 +262,15 @@ def killall_skip_test():
     vim.command(command)
 
 vim.command('map <F8> :py killall_skip_test()<cr>')
+import os
+def open_imported_file():
+    import_line = vim.current.line
+    module = import_line.split()[-1]
+    if module in os.sys.modules:
+        file_mod = os.sys.modules[module].__file__[:-1]
+        vim.command('vsplit %s' % file_mod)
+
+vim.command('map <C-S-O> :py open_imported_file()<cr>')     
 
 EOF
 
