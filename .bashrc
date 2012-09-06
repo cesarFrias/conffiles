@@ -119,7 +119,8 @@ alias vi='vim '
 
 alias car='cat '
 
-PS1="\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)} \u [\W] [\$(git branch | grep '^*' | cut -d' ' -f2)]$ "
+
+PS1="\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)} \u [\W] [\$(git branch 2>/dev/null | grep '^*' | cut -d' ' -f2)]$ "
 
 alias rprune='git remote prune origin'
 
