@@ -1,4 +1,4 @@
-          "Vimrc de César Frias, com ajuda de Oreio e Flávio Amieiro
+          "Vimrc de Cesar Frias, com ajuda de Oreio e Flávio Amieiro
 
 " Guarda posicao do cursor e historico da linha de comando :
 set viminfo='10,\"30,:40,%,n~/.viminfo
@@ -24,7 +24,7 @@ map ,ste :%s/\t/    /g<cr>
 map ,utf i# -*- coding: utf-8 -*-<cr>
 
 " Cabecalho: Mapeamento para inserir cabeçalho python
-map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: César Frias:r!date +"\%d/\%m/\%Y"<cr>i# Data: <end><cr><cr><cr>
+map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: Cesar Frias:r!date +"\%d/\%m/\%Y"<cr>i# Data: <end><cr><cr><cr>
 
 " Mapeamento para inserir if __name__ == '__main__' python
 map ,if :set paste<cr> iif __name__ == '__main__':<cr><esc>:set nopaste<cr>
