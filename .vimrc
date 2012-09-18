@@ -125,7 +125,7 @@ au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python syn keyword booleans True False
 au FileType python hi booleans ctermfg=blue
 
-"Algumas configurações automáticas para C
+" C: Algumas configurações automáticas
 au FileType c inoremap [ []<LEFT>
 au FileType c inoremap { {}<LEFT><CR><CR><UP>
 au FileType c inoremap ( ()<LEFT>
@@ -148,6 +148,13 @@ au FileType css inoremap " ""<LEFT>
 au FileType css inoremap ' ''<LEFT>
 au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
 
+" Html: Algumas configurações automáticas
+au FileType html inoremap {{ {{   }}<LEFT><LEFT><LEFT><LEFT>
+au FileType html inoremap ( ()<LEFT>
+au FileType html inoremap " ""<LEFT>
+au FileType html inoremap ' ''<LEFT>
+au FileType html inoremap < <><LEFT>
+au FileType html inoremap {% {%   %}<LEFT><LEFT><LEFT><LEFT>
 " Mostra os espaços em branco inuteis no final da linha 
 au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 
