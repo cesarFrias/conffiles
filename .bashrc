@@ -81,7 +81,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto -Rin --exclude="*.pyc"'
+    alias grep='grep --color=auto -Rin --binary-files=without-match'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
