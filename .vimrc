@@ -149,12 +149,12 @@ au FileType css inoremap ' ''<LEFT>
 au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
 
 " Html: Algumas configurações automáticas
-au FileType htmldjango inoremap {{ {{   }}<LEFT><LEFT><LEFT><LEFT>
+au FileType htmldjango inoremap {{ {{  }}<LEFT><LEFT><LEFT>
 au FileType htmldjango inoremap ( ()<LEFT>
 au FileType htmldjango inoremap " ""<LEFT>
 au FileType htmldjango inoremap ' ''<LEFT>
 au FileType htmldjango inoremap < <><LEFT>
-au FileType htmldjango inoremap {% {%   %}<LEFT><LEFT><LEFT><LEFT>
+au FileType htmldjango inoremap {% {%  %}<LEFT><LEFT><LEFT>
 " Mostra os espaços em branco inuteis no final da linha 
 au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 
