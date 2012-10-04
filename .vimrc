@@ -4,6 +4,10 @@
 set viminfo='10,\"30,:40,%,n~/.viminfo
 au BufReadPost * if line("'\"")|execute("normal `\"")|endif
 
+" Checa se houve alguma modificação externa no arquivo ao mover o cursor
+" Normal or Insert mode
+au CursorMoved,CursorMovedI * checktime
+
 " MostraTab: mostra TAB no inicio e espacos no fim das linhas
 map ,mt /^\t\+\\|\s\+$<cr>
 
