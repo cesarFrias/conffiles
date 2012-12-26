@@ -152,6 +152,14 @@ au FileType css inoremap " ""<LEFT>
 au FileType css inoremap ' ''<LEFT>
 au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
 
+" arduino: Syntax highligthning
+autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino syntax=c.vim
+au FileType arduino inoremap [ []<LEFT>
+au FileType arduino inoremap { {}<LEFT><CR><CR><UP>
+au FileType arduino inoremap ( ()<LEFT>
+au FileType arduino inoremap " ""<LEFT>
+au FileType arduino inoremap ' ''<LEFT>
+
 " Html: Algumas configurações automáticas
 au FileType htmldjango inoremap {{ {{  }}<LEFT><LEFT><LEFT>
 au FileType htmldjango inoremap ( ()<LEFT>
