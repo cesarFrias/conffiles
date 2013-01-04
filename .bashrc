@@ -143,3 +143,13 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 # pip bash completion end
+
+#django-admin bash completion start
+_django_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   DJANGO_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _django_completion django-admin
+# django-admin bash completion end
