@@ -135,6 +135,7 @@ au FileType c inoremap { {}<LEFT><CR><CR><UP>
 au FileType c inoremap ( ()<LEFT>
 au FileType c inoremap " ""<LEFT>
 au FileType c inoremap ' ''<LEFT>
+set guioptions=a
 
 " Php: Autocomplete e outras configuracoes
 au FileType php inoremap [ []<LEFT>
@@ -153,6 +154,7 @@ au FileType css inoremap ' ''<LEFT>
 au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
 
 " Html: Algumas configurações automáticas
+au FileType htmldjango inoremap {<CR>  {<CR><CR>}<UP>
 au FileType htmldjango inoremap {{ {{  }}<LEFT><LEFT><LEFT>
 au FileType htmldjango inoremap ( ()<LEFT>
 au FileType htmldjango inoremap " ""<LEFT>
