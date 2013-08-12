@@ -119,10 +119,12 @@ alias vi='vim '
 
 alias car='cat '
 
+alias rprune='git remote prune origin'
+
+alias log_fuderoso='git log --graph --oneline --decorate'
 
 PS1="\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)} \u [\W] [\$(git branch 2>/dev/null | grep '^*' | cut -d' ' -f2)]$ "
 
-alias rprune='git remote prune origin'
 
 if [ -e ~/.local_alias ]
 then
