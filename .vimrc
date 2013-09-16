@@ -306,3 +306,4 @@ vim.command('map <C-S-O> :py open_imported_file()<cr>')
 
 EOF
 
+map ,ct :TagbarToggle<CR>
