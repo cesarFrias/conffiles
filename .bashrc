@@ -83,7 +83,8 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto -Rin --binary-files=without-match'
+    alias grep='grep --color=auto --binary-files=without-match'
+    alias rgrep='grep -Rin'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
@@ -160,3 +161,5 @@ _django_completion()
 }
 complete -o default -F _django_completion django-admin
 # django-admin bash completion end
+
+source /usr/bin/virtualenvwrapper.sh
