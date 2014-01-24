@@ -65,6 +65,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+PS1="\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)} \u [\W] [\$(git branch 2>/dev/null | grep '^*' | cut -d' ' -f2)]$ "
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -81,7 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto -Rin --binary-files=without-match'
+    #alias grep='grep --color=auto -Rin --binary-files=without-match'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
@@ -127,8 +129,6 @@ alias show_patch='git show -p '
 alias log_fuderoso='git log --graph --oneline --decorate'
 
 alias ks='ls'
-
-PS1="\t\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)} \u [\W] [\$(git branch 2>/dev/null | grep '^*' | cut -d' ' -f2)]$ "
 
 
 if [ -e ~/.local_alias ]
