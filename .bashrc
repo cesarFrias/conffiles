@@ -162,4 +162,7 @@ _django_completion()
 complete -o default -F _django_completion django-admin
 # django-admin bash completion end
 
-source /usr/bin/virtualenvwrapper.sh
+if [ -e ~/.local_alias ]
+then
+    source /usr/bin/virtualenvwrapper.sh
+fi
