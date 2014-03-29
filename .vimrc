@@ -307,3 +307,9 @@ vim.command('map <C-S-O> :py open_imported_file()<cr>')
 EOF
 
 map ,ct :TagbarToggle<CR>
+
+execute pathogen#infect()
+
+let g:django_projects = '~/Workspace/'
+let g:django_activate_virtualenv = 1
+

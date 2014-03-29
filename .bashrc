@@ -97,9 +97,14 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+#if [ -f /etc/bash_completion ]; then
+#    . /etc/bash_completion
+#fi
+if [ -f /usr/share/bash-completion/bash_completion ]
+then
+    . /usr/share/bash-completion/bash_completion
 fi
+
 
 # Configurando aliases
 
@@ -152,7 +157,7 @@ _pip_completion()
 complete -o default -F _pip_completion pip
 # pip bash completion end
 
-#django-admin bash completion start
+#django-admin.py bash completion start
 _django_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
@@ -160,6 +165,6 @@ _django_completion()
                    DJANGO_AUTO_COMPLETE=1 $1 ) )
 }
 complete -o default -F _django_completion django-admin
-# django-admin bash completion end
+# django-admin.py bash completion end
 
 source /usr/bin/virtualenvwrapper.sh
