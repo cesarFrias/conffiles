@@ -87,6 +87,7 @@ set sw=4                        "numero de colunas para o comando > (ShiftWidth)
 set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
+set statusline+=%{virtualenv#statusline()} "Coloca o nome do virtualenv ativado na barra de status
 set statusline+=%{fugitive#statusline()} "Coloca a branch do git na barra de status
 
 retab                           "converter os TABs ja existentes
