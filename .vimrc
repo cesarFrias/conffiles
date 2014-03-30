@@ -38,9 +38,6 @@ map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
-" Para 'ocultar' e voltar os comentarios do arquivo atual
-noremap <F2> :hi Comment ctermfg=black guifg=black<cr>
-noremap <F3> :hi Comment term=bold ctermfg=cyan guifg=cyan<cr>
 "
 " Gundo - Graph undo tree
 nnoremap <F4> :GundoToggle<CR>
@@ -120,7 +117,7 @@ au FileType python inoremap { {}<LEFT>
 au FileType python inoremap ( ()<LEFT>
 au FileType python inoremap " ""<LEFT>
 au FileType python inoremap ' ''<LEFT>
-"au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
+au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
 au FileType python set omnifunc=pythoncomplete#Complete
 "Mostra caracteres que passaram de 79 colunas
 au FileType python highlight OverLength ctermfg=red
@@ -129,6 +126,9 @@ au FileType python match OverLength /\%80v.*/
 au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python syn keyword booleans True False
 au FileType python hi booleans ctermfg=blue
+au FileType python syn keyword operators or
+au FileType python hi operators ctermfg=darkyellow
+au FileType python hi Comment term=bold gui=bold ctermfg=darkgray guifg=darkgray
 
 " C: Algumas configurações automáticas
 au FileType c inoremap [ []<LEFT>
