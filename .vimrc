@@ -304,3 +304,5 @@ hi LineNr ctermfg=DarkMagenta
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
 hi IncSearch ctermbg=black ctermfg=cyan
+
+autocmd BufWritePost *.py call Flake8() 
