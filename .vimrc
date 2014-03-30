@@ -251,22 +251,6 @@ python << EOF
 import vim
 import re
 
-IPDB_STRING = "import ipdb; ipdb.set_trace()"
-
-def set_ipdb():
-    ipdb_line = int(vim.eval("line('.')")) - 1
-    current_line = vim.current.line
-    indentation = re.search("^ *", current_line).group()
-    vim.current.buffer.append(indentation + IPDB_STRING, ipdb_line)
-
-vim.command('map <F5> :py set_ipdb()<cr>')
-
-def killall_ipdb():
-    command = "g/^ *%s$/d" % IPDB_STRING
-    vim.command(command)
-
-vim.command('map <F6> :py killall_ipdb()<cr>')
-
 SKIP_TEST_STRING = "from nose.plugins.skip import SkipTest; raise SkipTest()"
 
 def set_skip_test():
