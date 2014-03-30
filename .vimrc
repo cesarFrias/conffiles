@@ -87,6 +87,7 @@ set sw=4                        "numero de colunas para o comando > (ShiftWidth)
 set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
+set statusline+=%{fugitive#statusline()} "Coloca a branch do git na barra de status
 
 retab                           "converter os TABs ja existentes
 
@@ -121,7 +122,8 @@ au FileType python inoremap { {}<LEFT>
 au FileType python inoremap ( ()<LEFT>
 au FileType python inoremap " ""<LEFT>
 au FileType python inoremap ' ''<LEFT>
-au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
+"au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
+au FileType python set omnifunc=pythoncomplete#Complete
 "Mostra caracteres que passaram de 79 colunas
 au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%80v.*/
@@ -314,3 +316,5 @@ execute pathogen#infect()
 let g:django_projects = '~/Workspace/'
 let g:django_activate_virtualenv = 1
 
+hi Visual term=reverse cterm=reverse
+hi LineNr ctermfg=DarkMagenta
