@@ -101,6 +101,7 @@ cab WQ wq
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
+colorscheme jelleybeans
 syntax on               "ligando a sintaxe colorida
 syn sync minlines=500   "nao faco ideia
 
