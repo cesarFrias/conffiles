@@ -74,7 +74,7 @@ set ruler                       "mostra a posicao do cursor, regua
 set laststatus=2                "mostra N linhas de estado (status)
 set textwidth=120               "quebra de linha
 set bs=2                        "comportamento do backspace
-set nosmartindent               "desligando pois esta padrao no CL40
+"set nosmartindent               "desligando pois esta padrao no CL40
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
@@ -86,6 +86,7 @@ set statusline+=%{fugitive#statusline()} "Coloca a branch do git na barra de sta
 
 retab                           "converter os TABs ja existentes
 
+filetype plugin indent on
 "Mantendo minha sanidade mental
 cab Q q
 cab W w
@@ -226,7 +227,7 @@ function ToggleFold()
    endif
 endfunction
 
-nmap <space> :call ToggleFold()<CR>
+"nmap <space> :call ToggleFold()<CR>
 
 map <F9> :NERDTree<return>
 map <F9> :NERDTreeToggle<return>
