@@ -126,7 +126,7 @@ au FileType python match OverLength /\%80v.*/
 au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python syn keyword booleans True False
 au FileType python hi booleans ctermfg=blue
-au FileType python syn keyword operators or
+au FileType python syn keyword operators or not
 au FileType python hi operators ctermfg=darkyellow
 au FileType python hi Comment term=bold gui=bold ctermfg=darkgray guifg=darkgray
 
