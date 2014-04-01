@@ -195,28 +195,8 @@ python << EOF
 # Enquanto não encontrar end of file vai interpretar python
 import vim
 import re
-
-SKIP_TEST_STRING = "from nose.plugins.skip import SkipTest; raise SkipTest()"
-
-def set_skip_test():
-    function_starts = "?def"
-    vim.command(function_starts)
-    skip_line = int(vim.eval("line('.')"))
-    current_line = vim.current.line
-    indentation = re.search("^ *", current_line).group()
-    indentation += '    '
-    #Corrige indentacao (pode nao ter linhas apos a definicao da funcao)
-    vim.current.buffer.append(indentation + SKIP_TEST_STRING, skip_line)
-
-vim.command('map <F7> :py set_skip_test()<cr>')
-
-def killall_skip_test():
-    command = "g/^ *%s/d" % SKIP_TEST_STRING 
-    vim.command(command)
-
-vim.command('map <F8> :py killall_skip_test()<cr>')
-
 import os
+
 def open_imported_file():
     import_line = vim.current.line
     try:
