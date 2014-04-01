@@ -43,8 +43,13 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 nnoremap <F4> :GundoToggle<CR>
 let g:gundo_width = 30
 
+map <F5> :NERDTreeToggle<return>
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+map <F6> :TagbarToggle<CR>
+
 "PEP8
-let g:pep8_map='<F10>'
+let g:pep8_map='<F8>'
 
 
 " Ruler e cursor sempre em branco
@@ -175,10 +180,6 @@ au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 " Guardar info da sintaxe desde o inicio do arquivo (nao se perde, fica lento)
 syn sync fromstart
 
-map <F9> :NERDTree<return>
-map <F9> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
 map ,rc :vsplit $MYVIMRC<cr>
 
 "Mapeamentos para alterar o tamanho da janela
@@ -237,8 +238,6 @@ def open_imported_file():
 vim.command('map <C-S-O> :py open_imported_file()<cr>')     
 
 EOF
-
-map ,ct :TagbarToggle<CR>
 
 execute pathogen#infect()
 
