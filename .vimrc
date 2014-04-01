@@ -197,8 +197,10 @@ import vim
 import re
 import os
 
+
 def open_imported_file():
     import_line = vim.current.line
+    import_line = import_line.split()
     try:
         exec(import_line)
         if import_line.startswith('import'):
