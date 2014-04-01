@@ -48,10 +48,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 map <F6> :TagbarToggle<CR>
 
-"PEP8
-let g:pep8_map='<F8>'
-
-
 " Ruler e cursor sempre em branco
 hi StatusLine ctermfg=white
 
@@ -131,6 +127,7 @@ au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python hi pythonUniString ctermfg=lightgreen
+au FileType python map <buffer> <F8> :call Flake8()<cr>
 
 " C: Algumas configurações automáticas
 au FileType c inoremap [ []<LEFT>
@@ -283,3 +280,5 @@ hi IncSearch ctermbg=black ctermfg=cyan
 
 autocmd BufWritePost *.py call Flake8()
 let g:pymode_folding = 0
+let g:airline#extensions#tagbar#enabled = 0
+let g:airline_powerline_fonts = 1
