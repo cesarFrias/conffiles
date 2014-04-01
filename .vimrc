@@ -111,8 +111,6 @@ au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
-au FileType python hi pythonString ctermfg=lightgreen
-au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python inoremap [ []<LEFT>
 au FileType python inoremap { {}<LEFT>
 au FileType python inoremap ( ()<LEFT>
@@ -297,7 +295,7 @@ map ,ct :TagbarToggle<CR>
 execute pathogen#infect()
 
 let g:django_projects = '~/Workspace/'
-let g:django_activate_virtualenv = 1
+let g:django_activate_virtualenv = 0
 
 hi Visual term=reverse cterm=reverse
 hi LineNr ctermfg=DarkMagenta
