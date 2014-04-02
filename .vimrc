@@ -99,7 +99,7 @@ cab WQ wq
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
-colorscheme desert
+colorscheme apprentice
 syntax on               "ligando a sintaxe colorida
 syn sync minlines=500   "nao faco ideia
 
@@ -267,6 +267,7 @@ vim.command('map <C-S-O> :py open_imported_file()<cr>')
 EOF
 
 execute pathogen#infect()
+execute pathogen#helptags()
 
 let g:django_projects = '~/Workspace/'
 let g:django_activate_virtualenv = 0
