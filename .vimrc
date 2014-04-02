@@ -272,7 +272,7 @@ execute pathogen#helptags()
 let g:django_projects = '~/Workspace/'
 let g:django_activate_virtualenv = 0
 
-hi Visual term=reverse cterm=reverse
+hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
 hi LineNr ctermfg=DarkMagenta
 
 " Busca colorida em verde
