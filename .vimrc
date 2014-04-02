@@ -279,7 +279,8 @@ hi LineNr ctermfg=DarkMagenta
 hi    Search ctermbg=green ctermfg=black
 hi IncSearch ctermbg=black ctermfg=cyan
 
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 let g:pymode_folding = 0
+let g:pymode_lint_on_fly = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
