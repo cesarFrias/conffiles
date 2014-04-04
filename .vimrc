@@ -99,7 +99,7 @@ cab WQ wq
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
-colorscheme apprentice
+colorscheme desert
 syntax on               "ligando a sintaxe colorida
 syn sync minlines=500   "nao faco ideia
 
@@ -269,7 +269,7 @@ EOF
 execute pathogen#infect()
 execute pathogen#helptags()
 
-let g:django_projects = '~/Workspace/'
+let g:django_projects = '~/.virtualenvs/'
 let g:django_activate_virtualenv = 0
 
 hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
@@ -279,7 +279,6 @@ hi LineNr ctermfg=DarkMagenta
 hi    Search ctermbg=green ctermfg=black
 hi IncSearch ctermbg=black ctermfg=cyan
 
-" autocmd BufWritePost *.py call Flake8()
 let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
 let g:airline#extensions#tagbar#enabled = 0
