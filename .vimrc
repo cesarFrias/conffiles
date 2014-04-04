@@ -283,3 +283,4 @@ let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
+let g:ctrlp_custom_ignore = '*.pyc'
