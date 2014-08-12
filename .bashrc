@@ -142,9 +142,9 @@ then
     source ~/.local_alias
 fi
 
-if [ -e ~/.sieve_conf ]
+if [ -e ~/.empresa_conf ]
 then
-    source ~/.sieve_conf
+    source ~/.empresa_conf
 fi
 
 #pip bash completion start
