@@ -21,6 +21,9 @@ map ,mm :set noic<cr>
 " TiraM:  Mapeamento para tirar os ^M do final das linhas
 map ,tm :%s/\r//g<cr>
 
+" PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
+map ,pla :PymodeLintAuto<cr>
+
 " SubstituiTabPorEspaço: Substitui os caracteres \t (tab) por 4 espaços 
 map ,ste :%s/\t/    /g<cr>       
 
@@ -47,6 +50,7 @@ map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 map <F6> :TagbarToggle<CR>
+let g:tagbar_width = 30
 
 " Ruler e cursor sempre em branco
 hi StatusLine ctermfg=white
@@ -262,7 +266,7 @@ def open_imported_file():
         print 'Não foi possível importar esse método (%s)' % error
 
 
-vim.command('map <C-S-O> :py open_imported_file()<cr>')     
+#vim.command('map <C-S-O> :py open_imported_file()<cr>')     
 
 EOF
 
