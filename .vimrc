@@ -35,6 +35,12 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'Rainbow-Parenthesis'
 Plugin 'Townk/vim-autoclose'
+Plugin 'scrooloose/NERDTree'
+Plugin 'fs111/pydoc.vim'
+Plugin 'ervandew/supertab'
+Plugin 'majutsushi/tagbar'
+Plugin 'sjl/gundo.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
