@@ -40,6 +40,7 @@ Plugin 'fs111/pydoc.vim'
 Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
+Plugin 'airblade/vim-gitgutter'
 
 
 " All of your Plugins must be added before the following line
@@ -265,3 +266,9 @@ let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
