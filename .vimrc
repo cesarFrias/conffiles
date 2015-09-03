@@ -1,5 +1,57 @@
           "Vimrc de Cesar Frias, com ajuda de Oreio e Flávio Amieiro
+          "
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'gregsexton/gitv'
+Plugin 'roman/golden-ratio'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'klen/python-mode'
+Plugin 'bling/vim-airline'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'Tpope/vim-commentary'
+Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-fugitive'
+Plugin 'heavenshell/vim-pydocstring'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'Rainbow-Parenthesis'
+Plugin 'Townk/vim-autoclose'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+source ~/.db_connections
 " Guarda posicao do cursor e historico da linha de comando :
 set viminfo='10,\"30,:40,%,n~/.viminfo
 au BufReadPost * if line("'\"")|execute("normal `\"")|endif
@@ -22,13 +74,13 @@ map ,mm :set noic<cr>
 map ,tm :%s/\r//g<cr>
 
 " PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
-map ,pla :PymodeLintAuto<cr>
+map ,pla :PymodeLintAuto<cr>zz
 
 " SubstituiTabPorEspaço: Substitui os caracteres \t (tab) por 4 espaços 
 map ,ste :%s/\t/    /g<cr>       
 
 " Acrescenta linha de comentário funcional UTF-8
-map ,utf i# -*- coding: utf-8 -*-<cr>
+map ,utf ggi# -*- coding: utf-8 -*-<cr>
 
 " Cabecalho: Mapeamento para inserir cabeçalho python
 map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: Cesar Frias:r!date +"\%d/\%m/\%Y"<cr>i# Data: <end><cr><cr><cr>
@@ -40,7 +92,6 @@ map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
-
 "
 " Gundo - Graph undo tree
 nnoremap <F4> :GundoToggle<CR>
@@ -116,11 +167,6 @@ au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
-au FileType python inoremap [ []<LEFT>
-au FileType python inoremap { {}<LEFT>
-au FileType python inoremap ( ()<LEFT>
-au FileType python inoremap " ""<LEFT>
-au FileType python inoremap ' ''<LEFT>
 au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
 au FileType python set omnifunc=pythoncomplete#Complete
 "Mostra caracteres que passaram de 79 colunas
@@ -132,49 +178,6 @@ au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python hi pythonUniString ctermfg=lightgreen
 au FileType python map <buffer> <F8> :call Flake8()<cr>
-
-" C: Algumas configurações automáticas
-au FileType c inoremap [ []<LEFT>
-au FileType c inoremap { {}<LEFT><CR><CR><UP>
-au FileType c inoremap ( ()<LEFT>
-au FileType c inoremap " ""<LEFT>
-au FileType c inoremap ' ''<LEFT>
-set guioptions=a
-
-" Php: Autocomplete e outras configuracoes
-au FileType php inoremap [ []<LEFT>
-au FileType php inoremap { {}<LEFT>
-au FileType php inoremap ( ()<LEFT>
-au FileType php inoremap " ""<LEFT>
-au FileType php inoremap ' ''<LEFT>
-au FileType php set complete-=k/home/cesar/.vim/doc/php/php.txt complete+=k/home/cesar/.vim/doc/php/php.txt
-
-" Css: Autocomplete e outras configuracoes
-au FileType css inoremap [ []<LEFT>
-au FileType css inoremap { {}<LEFT>
-au FileType css inoremap ( ()<LEFT>
-au FileType css inoremap " ""<LEFT>
-au FileType css inoremap ' ''<LEFT>
-au FileType css set complete-=k/home/cesar/.vim/doc/css/css.txt complete+=k/home/cesar/.vim/doc/css/css.txt
-
-" arduino: Syntax highligthning
-autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino syntax=c.vim
-au FileType arduino inoremap [ []<LEFT>
-au FileType arduino inoremap { {}<LEFT><CR><CR><UP>
-au FileType arduino inoremap ( ()<LEFT>
-au FileType arduino inoremap " ""<LEFT>
-au FileType arduino inoremap ' ''<LEFT>
-
-" Html: Algumas configurações automáticas
-au FileType htmldjango inoremap {<CR>  {<CR><CR>}<UP>
-au FileType htmldjango inoremap {{ {{  }}<LEFT><LEFT><LEFT>
-au FileType htmldjango inoremap ( ()<LEFT>
-au FileType htmldjango inoremap " ""<LEFT>
-au FileType htmldjango inoremap ' ''<LEFT>
-au FileType htmldjango inoremap < <><LEFT>
-au FileType htmldjango inoremap {% {%  %}<LEFT><LEFT><LEFT>
-" Mostra os espaços em branco inuteis no final da linha 
-au BufNewFile,BufRead * syn match brancomala '\s\+$' | hi brancomala ctermbg=red
 
 " Guardar info da sintaxe desde o inicio do arquivo (nao se perde, fica lento)
 syn sync fromstart
@@ -230,6 +233,8 @@ function ToggleFold()
 endfunction
 
 nmap <space> :call ToggleFold()<CR>
+" Espaço funcionando como o zf para Toggle sem indentação
+vmap <space> zf<cr>
 map ,rc :vsplit $MYVIMRC<cr>
 
 "Mapeamentos para alterar o tamanho da janela
@@ -237,44 +242,6 @@ map <S-Left> <c-w><
 map <S-Right> <c-w>>
 map <S-Up> <c-w>+
 map <S-Down> <c-w>-
-
-" Espaço funcionando como o zf para Toggle sem indentação
-vmap <space> zf<cr>
-
-python << EOF
-# Enquanto não encontrar end of file vai interpretar python
-import vim
-import re
-import os
-
-
-def open_imported_file():
-    import_line = vim.current.line
-    try:
-        exec(import_line)
-        if import_line.startswith('import') or import_line.startswith(' '):
-            module = import_line.split()[-1]
-        else:
-            module = import_line.split()[1]
-        if module in os.sys.modules:
-            file_name = os.sys.modules[module].__file__
-            if file_name.endswith('pyc'):
-                vim.command('split %s' % file_name[:-1])
-            elif file_name.endswith('so'):
-                print 'Arquivo binário'
-    except ImportError, error:
-        print 'Não foi possível importar esse método (%s)' % error
-
-
-#vim.command('map <C-S-O> :py open_imported_file()<cr>')     
-
-EOF
-
-execute pathogen#infect()
-execute pathogen#helptags()
-
-let g:django_projects = '~/.virtualenvs/'
-let g:django_activate_virtualenv = 0
 
 hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
 hi LineNr ctermfg=DarkMagenta
@@ -288,6 +255,7 @@ let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:airline#extensions#tagbar#enabled = 0
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
+let g:dbext_default_SQLITE_bin = 'sqlite3'
