@@ -41,6 +41,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'tpope/vim-endwise'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,7 +112,7 @@ map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 30
 
 " Ruler e cursor sempre em branco
-hi StatusLine ctermfg=white
+" hi StatusLine ctermfg=white
 
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
@@ -160,7 +162,7 @@ cab WQ wq
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
-colorscheme desert
+colorscheme monokai
 syntax on               "ligando a sintaxe colorida
 syn sync minlines=500   "nao faco ideia
 
@@ -169,6 +171,7 @@ syn sync minlines=500   "nao faco ideia
 au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 
+au FileType ruby set ts=2 sw=2 tw=100 et si
 
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
@@ -250,7 +253,7 @@ map <S-Up> <c-w>+
 map <S-Down> <c-w>-
 
 hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
-hi LineNr ctermfg=DarkMagenta
+" hi LineNr ctermfg=DarkMagenta
 
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
@@ -271,3 +274,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+
+let g:ackprg =
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/"
