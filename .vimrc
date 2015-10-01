@@ -38,7 +38,6 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'fs111/pydoc.vim'
 Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
-Plugin 'sjl/gundo.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-endwise'
@@ -74,36 +73,13 @@ map ,mt /^\t\+\\|\s\+$<cr>
 " PalavrasRepetidas: procura palavras repetidas no texto
 map ,pr /\<\(\w*\) \1\><cr>
 
-" MinusculasMaiusculas: converte a primeira letra de cada frase p/MAIUSCULAS
-map ,mm :set noic<cr>
-       \:%s/\(\(\([.!?]\s*\\|^\s*\)\n^\\|[.?!-] \)\s*"\?\s*\)\([a-zàáéóú]\)/\1\U\4/cg<cr>
-
-" TiraM:  Mapeamento para tirar os ^M do final das linhas
-map ,tm :%s/\r//g<cr>
-
 " PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
 map ,pla :PymodeLintAuto<cr>zz
-
-" SubstituiTabPorEspaço: Substitui os caracteres \t (tab) por 4 espaços 
-map ,ste :%s/\t/    /g<cr>       
-
-" Acrescenta linha de comentário funcional UTF-8
-map ,utf ggi# -*- coding: utf-8 -*-<cr>
-
-" Cabecalho: Mapeamento para inserir cabeçalho python
-map ,py i#!/usr/bin/python# -*- coding: utf-8 -*-# Desenvolvido por: Cesar Frias:r!date +"\%d/\%m/\%Y"<cr>i# Data: <end><cr><cr><cr>
-
-" Mapeamento para inserir if __name__ == '__main__' python
-map ,if :set paste<cr> iif __name__ == '__main__':<cr><esc>:set nopaste<cr>
 
 map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
-"
-" Gundo - Graph undo tree
-nnoremap <F4> :GundoToggle<CR>
-let g:gundo_width = 30
 
 map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
@@ -253,7 +229,7 @@ map <S-Up> <c-w>+
 map <S-Down> <c-w>-
 
 hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
-" hi LineNr ctermfg=DarkMagenta
+hi LineNr ctermfg=black
 
 " Busca colorida em verde
 hi    Search ctermbg=green ctermfg=black
