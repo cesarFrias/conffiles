@@ -85,7 +85,7 @@ map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 map <F6> :TagbarToggle<CR>
-let g:tagbar_width = 30
+let g:tagbar_width = 15
 
 " Ruler e cursor sempre em branco
 " hi StatusLine ctermfg=white
