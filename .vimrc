@@ -232,8 +232,8 @@ hi Visual term=reverse cterm=reverse ctermfg=white ctermbg=black
 hi LineNr ctermfg=black
 
 " Busca colorida em verde
-hi    Search ctermbg=green ctermfg=black
-hi IncSearch ctermbg=black ctermfg=cyan
+hi    Search ctermbg=black ctermfg=gray
+hi IncSearch ctermbg=black ctermfg=gray
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
 let g:pymode_folding = 0
