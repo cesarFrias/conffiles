@@ -87,9 +87,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 15
 
-" Ruler e cursor sempre em branco
-" hi StatusLine ctermfg=white
-
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
 nmap N Nzz
