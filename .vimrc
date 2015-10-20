@@ -230,6 +230,9 @@ hi    Search ctermbg=black ctermfg=gray
 hi IncSearch ctermbg=black ctermfg=gray
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
+hi CursorLine ctermbg=none ctermfg=none
+hi CursorLineNr ctermfg=darkblue ctermbg=black
+set cursorline
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
 let g:pymode_folding = 0
