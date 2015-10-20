@@ -252,4 +252,11 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/"
+
+" Syntastic Checkers
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+nnoremap <F7> :SyntasticCheck<CR>
