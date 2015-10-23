@@ -230,7 +230,7 @@ hi    Search ctermbg=black ctermfg=gray
 hi IncSearch ctermbg=black ctermfg=gray
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
-hi CursorLine ctermbg=none ctermfg=none
+hi CursorLine cterm=italic ctermbg=none ctermfg=none
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 set cursorline
 
@@ -259,4 +259,5 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-nnoremap <F7> :SyntasticCheck<CR>
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <F7> :SyntasticCheck<CR>:redraw!<CR>
