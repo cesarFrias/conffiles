@@ -42,6 +42,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
+Plugin 'kien/rainbow_parentheses.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
