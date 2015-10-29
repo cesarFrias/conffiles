@@ -231,7 +231,7 @@ hi    Search ctermbg=black ctermfg=gray
 hi IncSearch ctermbg=black ctermfg=gray
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
-hi CursorLine cterm=italic ctermbg=none ctermfg=none
+hi CursorLine cterm=bold ctermbg=none ctermfg=none
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 set cursorline
 
