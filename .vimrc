@@ -43,6 +43,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'vim-scripts/upAndDown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -221,10 +222,10 @@ vmap <space> zf<cr>
 map ,rc :vsplit $MYVIMRC<cr>
 
 "Mapeamentos para alterar o tamanho da janela
-map <S-Left> <c-w><
-map <S-Right> <c-w>>
-map <S-Up> <c-w>+
-map <S-Down> <c-w>-
+map <A-Left> <c-w><
+map <A-Right> <c-w>>
+map <A-Up> <c-w>+
+map <A-Down> <c-w>-
 
 
 hi    Search ctermbg=black ctermfg=gray
