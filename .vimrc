@@ -44,6 +44,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/upAndDown'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -216,10 +217,12 @@ function ToggleFold()
    endif
 endfunction
 
-nmap <space> :call ToggleFold()<CR>
+nmap <f2> :call ToggleFold()<CR>
 " Espaço funcionando como o zf para Toggle sem indentação
-vmap <space> zf<cr>
-map ,rc :vsplit $MYVIMRC<cr>
+vmap <f2> zf<cr>
+
+let mapleader=" "
+map <Leader>rc :vsplit $MYVIMRC<cr>
 
 "Mapeamentos para alterar o tamanho da janela
 map <A-Left> <c-w><
