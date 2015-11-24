@@ -246,6 +246,7 @@ let g:pymode_rope_complete_on_dot = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
+let g:golden_ratio_wrap_ignored = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
 
