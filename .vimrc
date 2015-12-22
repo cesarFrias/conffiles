@@ -222,7 +222,13 @@ nmap <f2> :call ToggleFold()<CR>
 vmap <f2> zf<cr>
 
 let mapleader=" "
-map <Leader>rc :vsplit $MYVIMRC<cr>
+map <Leader>rc :vsplit $MYVIMRC<CR>
+map <Leader>ac :Ack! 
+map <Leader>af :AckFromSearch!<CR>
+map <Leader>gc :Gcommit -m'
+map <Leader>gp :Gpush<CR>
+map <Leader>gs :Gstatus<CR>
+
 
 "Mapeamentos para alterar o tamanho da janela
 map <A-Left> <c-w><
@@ -232,7 +238,7 @@ map <A-Down> <c-w>-
 
 
 hi    Search ctermbg=black ctermfg=gray
-hi IncSearch ctermbg=black ctermfg=gray
+hi IncSearch ctermbg=blue ctermfg=gray
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLine cterm=bold ctermbg=none ctermfg=none
@@ -246,7 +252,6 @@ let g:pymode_rope_complete_on_dot = 1
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
-let g:golden_ratio_wrap_ignored = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
 
@@ -255,6 +260,8 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+map <Leader>g :GoldenRatioToggle<cr>:GoldenRatioToggle<cr>
 
 
 let g:ackprg =
@@ -267,3 +274,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <F7> :SyntasticCheck<CR>:redraw!<CR>
+
+let g:tagbar_updateonsave_maxlines = 1000
