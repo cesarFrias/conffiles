@@ -76,9 +76,6 @@ map ,mt /^\t\+\\|\s\+$<cr>
 " PalavrasRepetidas: procura palavras repetidas no texto
 map ,pr /\<\(\w*\) \1\><cr>
 
-" PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
-map ,pla :PymodeLintAuto<cr>zz
-
 map ,pt :set spell spelllang=pt<cr>
 map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
@@ -228,8 +225,16 @@ map <Leader>af :AckFromSearch!<CR>
 map <Leader>gc :Gcommit -m'
 map <Leader>gp :Gpush<CR>
 map <Leader>gs :Gstatus<CR>
-
-
+map <Leader>rc :vsplit $MYVIMRC<cr>
+map <Leader>g :GoldenRatioToggle<CR> :GoldenRatioToggle<CR>
+" PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
+map <Leader>pla :PymodeLintAuto<cr>zz
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+"
 "Mapeamentos para alterar o tamanho da janela
 map <A-Left> <c-w><
 map <A-Right> <c-w>>
@@ -255,13 +260,6 @@ let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
 
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-map <Leader>g :GoldenRatioToggle<cr>:GoldenRatioToggle<cr>
 
 
 let g:ackprg =
