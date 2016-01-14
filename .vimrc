@@ -18,7 +18,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/gitv'
-Plugin 'roman/golden-ratio'
+" Plugin 'roman/golden-ratio'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'klen/python-mode'
 Plugin 'bling/vim-airline'
@@ -45,6 +45,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/upAndDown'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'justincampbell/vim-eighties'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'Valloric/MatchTagAlways'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,7 +85,7 @@ map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
 map <F5> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls$']
 
 map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 15
@@ -220,21 +223,23 @@ vmap <f2> zf<cr>
 
 let mapleader=" "
 map <Leader>rc :vsplit $MYVIMRC<CR>
-map <Leader>ac :Ack! 
+map <Leader>ac :Ack!<space>
 map <Leader>af :AckFromSearch!<CR>
 map <Leader>gc :Gcommit -m'
 map <Leader>gp :Gpush<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>rc :vsplit $MYVIMRC<cr>
-map <Leader>g :GoldenRatioToggle<CR> :GoldenRatioToggle<CR>
-" PymodeLintAuto:  Mapeamento para executar PymodeLintAuto
+" map <Leader>g :GoldenRatioToggle<CR> :GoldenRatioToggle<CR>
+"
+" Mapeamento para executar PymodeLintAuto
 map <Leader>pla :PymodeLintAuto<cr>zz
+
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-"
+
 "Mapeamentos para alterar o tamanho da janela
 map <A-Left> <c-w><
 map <A-Right> <c-w>>
