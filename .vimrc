@@ -85,10 +85,10 @@ map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
 map <F5> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$']
 
 map <F6> :TagbarToggle<CR>
-let g:tagbar_width = 15
+let g:tagbar_width = 25
 
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
@@ -235,7 +235,7 @@ map <Leader>rc :vsplit $MYVIMRC<cr>
 map <Leader>pla :PymodeLintAuto<cr>zz
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
@@ -264,8 +264,6 @@ let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
-
-
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/"
