@@ -44,10 +44,12 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/upAndDown'
-Plugin 'easymotion/vim-easymotion'
+" Plugin 'easymotion/vim-easymotion'
 Plugin 'justincampbell/vim-eighties'
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'justinmk/vim-sneak'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,6 +86,7 @@ map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
+map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$']
 
@@ -277,3 +280,4 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 nnoremap <F7> :SyntasticCheck<CR>:redraw!<CR>
 
 let g:tagbar_updateonsave_maxlines = 1000
+let g:sneak#streak = 1
