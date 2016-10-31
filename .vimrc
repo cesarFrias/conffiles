@@ -21,7 +21,7 @@ Plugin 'gregsexton/gitv'
 " Plugin 'roman/golden-ratio'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'klen/python-mode'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Tpope/vim-commentary'
 Plugin 'nvie/vim-flake8'
@@ -49,6 +49,7 @@ Plugin 'justincampbell/vim-eighties'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'justinmk/vim-sneak'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
@@ -121,7 +122,7 @@ set bs=2                        "comportamento do backspace
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
-set wildmode=longest,list:full  "para completacao do TAB igual bash
+" set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
 set statusline+=%{virtualenv#statusline()} "Coloca o nome do virtualenv ativado na barra de status
@@ -150,7 +151,7 @@ syn sync minlines=500   "nao faco ideia
 au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 
-au FileType ruby set ts=2 sw=2 tw=100 et si
+au FileType ruby,javascript set ts=2 sw=2 tw=100 et si
 
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
@@ -262,7 +263,7 @@ let g:pymode_virtualenv_path = $VIRTUAL_ENV
 let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
 let g:pymode_rope_complete_on_dot = 1
-let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
