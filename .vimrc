@@ -87,6 +87,7 @@ map ,en :set spell spelllang=en<cr>
 map ,ns :set nospell<cr>
 map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 
+map <F3> :MBEToggle<return>
 map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$']
@@ -150,8 +151,11 @@ syn sync minlines=500   "nao faco ideia
 " TXT: Arquivos texto tem tratamento especial
 au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
+au BufNewFile,BufRead *empresa_conf set ft=sh "spell
 
 au FileType ruby,javascript set ts=2 sw=2 tw=100 et si
+au FileType ruby syn keyword Debug byebug
+au FileType ruby hi Debug ctermfg=yellow
 
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
@@ -270,7 +274,7 @@ let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-file=is:tags"
 
 " Syntastic Checkers
 let g:syntastic_ruby_checkers = ['rubocop']
