@@ -18,7 +18,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/gitv'
-" Plugin 'roman/golden-ratio'
+Plugin 'roman/golden-ratio'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'klen/python-mode'
 Plugin 'vim-airline/vim-airline'
@@ -50,6 +50,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'skwp/greplace.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -89,7 +90,7 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 map <F3> :MBEToggle<return>
 map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$']
 
 map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 25
@@ -108,7 +109,6 @@ set is hls ic scs magic         "opcoes espertas de busca
 set title                       "Mostra titulo do arquivo  
 set sm                          "ShowMatch: mostra o par do parenteses/chaves recem fechado
 set hid                         "HIDden: undo mesmo depois de trocar de buffer 
-set aw                          "AutoWrite: gravacao automatica a cada alteracao
 set ai                          "AutoIndent: identacao automatica
 set ts=4                        "TabStop: numero de caracteres de avanco do TAB
 set report=0                    "reporta acoes com linhas
@@ -127,6 +127,7 @@ set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
 set statusline+=%{virtualenv#statusline()} "Coloca o nome do virtualenv ativado na barra de status
 set statusline+=%{fugitive#statusline()} "Coloca a branch do git na barra de status
+set splitright
 
 retab                           "converter os TABs ja existentes
 
@@ -229,6 +230,7 @@ nmap <f2> :call ToggleFold()<CR>
 vmap <f2> zf<cr>
 
 let mapleader=" "
+map <Leader>t :!ctags -R .<CR>
 map <Leader>rc :vsplit $MYVIMRC<CR>
 map <Leader>ac :Ack!<space>
 map <Leader>af :AckFromSearch!<CR>
@@ -236,8 +238,7 @@ map <Leader>gc :Gcommit -m'
 map <Leader>gp :Gpush<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>rc :vsplit $MYVIMRC<cr>
-" map <Leader>g :GoldenRatioToggle<CR> :GoldenRatioToggle<CR>
-"
+
 " Mapeamento para executar PymodeLintAuto
 map <Leader>pla :PymodeLintAuto<cr>zz
 
@@ -273,7 +274,7 @@ let g:golden_ratio_exclude_nonmodifiable = 1
 let g:dbext_default_SQLITE_bin = 'sqlite3'
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-file=is:tags"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-dir specs/ --ignore-file=is:tags"
 
 " Syntastic Checkers
 let g:syntastic_ruby_checkers = ['rubocop']
@@ -285,3 +286,5 @@ nnoremap <F7> :SyntasticCheck<CR>:redraw!<CR>
 
 let g:tagbar_updateonsave_maxlines = 1000
 let g:sneak#streak = 1
+let g:golden_ratio_autocommand = 0
+au VimEnter * GoldenRatioToggle
