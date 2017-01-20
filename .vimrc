@@ -256,7 +256,7 @@ map <A-Down> <c-w>-
 
 
 hi    Search ctermbg=black ctermfg=gray
-hi IncSearch ctermbg=blue ctermfg=gray
+hi IncSearch ctermbg=blue ctermfg=black
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLine cterm=bold ctermbg=none ctermfg=none
