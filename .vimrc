@@ -91,6 +91,7 @@ map <F3> :MBEToggle<return>
 map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$']
+let NERDTreeWinSize = 30
 
 map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 25
@@ -231,6 +232,7 @@ vmap <f2> zf<cr>
 
 let mapleader=" "
 map <Leader>t :!ctags -R .<CR>
+map <Leader>p :CtrlPTag <CR>
 map <Leader>rc :vsplit $MYVIMRC<CR>
 map <Leader>ac :Ack!<space>
 map <Leader>af :AckFromSearch!<CR>
