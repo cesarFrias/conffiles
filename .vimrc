@@ -249,12 +249,16 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+vnoremap <Leader>y "*y<CR>
+
 "Mapeamentos para alterar o tamanho da janela
 map <A-Left> <c-w><
 map <A-Right> <c-w>>
 map <A-Up> <c-w>+
 map <A-Down> <c-w>-
 
+map ; :
+inoremap ;; <ESC>
 
 hi    Search ctermbg=black ctermfg=gray
 hi IncSearch ctermbg=blue ctermfg=black
