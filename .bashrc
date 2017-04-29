@@ -178,7 +178,3 @@ then
 fi
 
 PATH="/usr/local/heroku/bin:$PATH"
-PATH="$HOME/.rbenv/bin:$PATH"
-PATH="$HOME/Workspace/EstanteVirtual/daileon:$PATH"
-eval "$(rbenv init -)"
-

@@ -24,7 +24,6 @@ Plugin 'klen/python-mode'
 Plugin 'vim-airline/vim-airline'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Tpope/vim-commentary'
-Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'jmcantrell/vim-virtualenv'
@@ -51,6 +50,9 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skwp/greplace.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'dbext.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,9 +109,9 @@ nmap g# g#zz
 " OPCOES DO SET
 "(IncrementedSearch, HighLightedSearch, IgnoreCase, SmartCaSe)
 set is hls ic scs magic         "opcoes espertas de busca
-set title                       "Mostra titulo do arquivo  
+set title                       "Mostra titulo do arquivo
 set sm                          "ShowMatch: mostra o par do parenteses/chaves recem fechado
-set hid                         "HIDden: undo mesmo depois de trocar de buffer 
+set hid                         "HIDden: undo mesmo depois de trocar de buffer
 set ai                          "AutoIndent: identacao automatica
 set ts=4                        "TabStop: numero de caracteres de avanco do TAB
 set report=0                    "reporta acoes com linhas
@@ -123,7 +125,7 @@ set bs=2                        "comportamento do backspace
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
-" set wildmode=longest,list:full  "para completacao do TAB igual bash
+set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
 set statusline+=%{virtualenv#statusline()} "Coloca o nome do virtualenv ativado na barra de status
@@ -161,8 +163,6 @@ au FileType ruby hi Debug ctermfg=yellow
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
-au FileType python set complete-=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict complete+=k/home/cesar/.vim/doc/pydiction-1.2/complete-dict
-au FileType python set omnifunc=pythoncomplete#Complete
 "Mostra caracteres que passaram de 79 colunas
 au FileType python highlight OverLength ctermfg=red
 au FileType python match OverLength /\%80v.*/
@@ -239,8 +239,7 @@ map <Leader>af :AckFromSearch!<CR>
 map <Leader>gc :Gcommit -m'
 map <Leader>gp :Gpush<CR>
 map <Leader>gs :Gstatus<CR>
-map <Leader>rc :vsplit $MYVIMRC<cr>
-
+map <Leader>wh :Vimwiki2HTML
 " Mapeamento para executar PymodeLintAuto
 map <Leader>pla :PymodeLintAuto<cr>zz
 
@@ -268,12 +267,14 @@ set cursorline
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
 let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
+let g:pymode_lint_cwindow = 0
 let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_goto_definition_cmd = 'vs'
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:ctrlp_custom_ignore = '*.pyc'
 let g:golden_ratio_exclude_nonmodifiable = 1
-let g:dbext_default_SQLITE_bin = 'sqlite3'
+let g:ctrlp_custom_ignore = '\v\.(pyc)$'
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-dir specs/ --ignore-file=is:tags"
@@ -290,3 +291,13 @@ let g:tagbar_updateonsave_maxlines = 1000
 let g:sneak#streak = 1
 let g:golden_ratio_autocommand = 0
 au VimEnter * GoldenRatioToggle
+
+
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin' : '/usr/local/bin/jsctags'
+\ }
+
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.html_template = 'bootstrap.tpl'
+let g:vimwiki_list = [wiki_1]
