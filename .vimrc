@@ -52,6 +52,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skwp/greplace.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dbext.vim'
+Plugin 'tpope/vim-dispatch'
 
 
 " All of your Plugins must be added before the following line
