@@ -53,6 +53,7 @@ Plugin 'skwp/greplace.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dbext.vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'jiangmiao/auto-pairs'
 
 
 " All of your Plugins must be added before the following line
@@ -106,6 +107,7 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
+nmap G Gzz
 
 " OPCOES DO SET
 "(IncrementedSearch, HighLightedSearch, IgnoreCase, SmartCaSe)
@@ -240,7 +242,7 @@ map <Leader>af :AckFromSearch!<CR>
 map <Leader>gc :Gcommit -m'
 map <Leader>gp :Gpush<CR>
 map <Leader>gs :Gstatus<CR>
-map <Leader>wh :Vimwiki2HTML
+map <Leader>wa :VimwikiAll2HTML<CR>
 " Mapeamento para executar PymodeLintAuto
 map <Leader>pla :PymodeLintAuto<cr>zz
 

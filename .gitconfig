@@ -22,3 +22,5 @@
     untracked = red reverse
 [core]
     editor = vim
+[push]
+	default = simple
