@@ -54,6 +54,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'dbext.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-rhubarb'
 
 
 " All of your Plugins must be added before the following line
@@ -282,6 +283,7 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:ctrlp_custom_ignore = '\v\.(pyc)$'
+let g:ctrlp_max_files = 0
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-dir specs/ --ignore-file=is:tags"
