@@ -287,7 +287,6 @@ let g:ctrlp_max_files = 0
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-dir specs/ --ignore-file=is:tags"
-let g:ack_autoclose = 1
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 1
 
