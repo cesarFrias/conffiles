@@ -252,6 +252,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+let g:rspec_command = "Dispatch RAILS_ENV=test bundle exec rspec {spec}"
 vnoremap <Leader>y "*y<CR>
 
 "Mapeamentos para alterar o tamanho da janela
