@@ -54,6 +54,7 @@ Plugin 'dbext.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'dikiaap/minimalist'
 
 
 " All of your Plugins must be added before the following line
@@ -149,7 +150,7 @@ cab WQ wq
 " CORES
 " Cores no terminal com a sintaxe
 set background=dark     "eh importante o bg estar ANTES do terminfo
-colorscheme monokai
+colorscheme minimalist
 syntax on               "ligando a sintaxe colorida
 syn sync minlines=500   "nao faco ideia
 
