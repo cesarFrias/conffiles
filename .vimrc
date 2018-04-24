@@ -48,14 +48,17 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'skwp/greplace.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dbext.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'dikiaap/minimalist'
-
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'kablamo/vim-git-log'
+Plugin 'yegappan/greplace'
+Plugin 'aquach/vim-http-client'
+Plugin 'slim-template/vim-slim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,7 +98,7 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 map <F3> :MBEToggle<return>
 map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$', '\.gem$', '__pycache__', 'htmlcov']
 let NERDTreeWinSize = 30
 
 map <F6> :TagbarToggle<CR>
@@ -109,6 +112,8 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 nmap G Gzz
+nmap <a-left> :bp<cr>
+nmap <a-right> :bn<cr>
 
 " OPCOES DO SET
 "(IncrementedSearch, HighLightedSearch, IgnoreCase, SmartCaSe)
@@ -160,7 +165,7 @@ au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 au BufNewFile,BufRead *empresa_conf set ft=sh "spell
 
-au FileType ruby,javascript set ts=2 sw=2 tw=100 et si
+au FileType ruby set ts=2 sw=2 tw=100 et si
 au FileType ruby syn keyword Debug byebug
 au FileType ruby hi Debug ctermfg=yellow
 
@@ -254,13 +259,7 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch RAILS_ENV=test bundle exec rspec {spec}"
-vnoremap <Leader>y "*y<CR>
-
-"Mapeamentos para alterar o tamanho da janela
-map <A-Left> <c-w><
-map <A-Right> <c-w>>
-map <A-Up> <c-w>+
-map <A-Down> <c-w>-
+vnoremap <Leader>y "+y
 
 map ; :
 inoremap ;; <ESC>
@@ -283,11 +282,11 @@ let g:pymode_rope_goto_definition_cmd = 'vs'
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
-let g:ctrlp_custom_ignore = '\v\.(pyc)$'
+let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir vendor/ --ignore-dir specs/ --ignore-file=is:tags"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 1
 
@@ -305,11 +304,21 @@ let g:golden_ratio_autocommand = 0
 au VimEnter * GoldenRatioToggle
 
 
-let g:tagbar_type_javascript = {
-    \ 'ctagsbin' : '/usr/local/bin/jsctags'
-\ }
-
 let wiki_1 = {}
 let wiki_1.path = '~/vimwiki/'
 let wiki_1.html_template = 'bootstrap.tpl'
 let g:vimwiki_list = [wiki_1]
+
+let g:tagbar_type_javascript = {
+  \ 'ctagstype': 'JavaScript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+\ }

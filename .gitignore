@@ -5,3 +5,4 @@
 *.local_alias
 .vim/spell/**
 bundle/
+tags
