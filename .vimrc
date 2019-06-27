@@ -98,7 +98,7 @@ map ,u8 :set encoding=utf-8 termencoding=latin1<cr>
 map <F3> :MBEToggle<return>
 map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$', '\.gem$', '__pycache__', 'htmlcov']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$', '\.gem$', '__pycache__', 'htmlcov', '\.mo$']
 let NERDTreeWinSize = 30
 
 map <F6> :TagbarToggle<CR>
@@ -173,8 +173,8 @@ au FileType ruby hi Debug ctermfg=yellow
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
 "Mostra caracteres que passaram de 79 colunas
-au FileType python highlight OverLength ctermfg=red
-au FileType python match OverLength /\%80v.*/
+" au FileType python highlight OverLength ctermfg=red
+" au FileType python match OverLength /\%80v.*/
 "Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python hi pythonString ctermfg=lightgreen
@@ -268,15 +268,17 @@ hi    Search ctermbg=black ctermfg=gray
 hi IncSearch ctermbg=blue ctermfg=black
 hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
 hi LineNr ctermfg=gray ctermbg=black
-hi CursorLine cterm=bold ctermbg=none ctermfg=none
 hi CursorLineNr ctermfg=darkblue ctermbg=black
+hi CursorLine cterm=bold ctermfg=none ctermbg=none
 set cursorline
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
+let g:pymode_python = 'python3'
 let g:pymode_folding = 0
 let g:pymode_lint_on_fly = 1
 let g:pymode_lint_cwindow = 0
-let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope = 1
+let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_autoimport = 1
 let g:pymode_rope_goto_definition_cmd = 'vs'
 let g:airline#extensions#tagbar#enabled = 1
@@ -286,7 +288,7 @@ let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 1
 
