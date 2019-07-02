@@ -180,7 +180,7 @@ au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python hi pythonUniString ctermfg=lightgreen
-au FileType python map <buffer> <F8> :call Flake8()<cr>
+" au FileType python map <buffer> <F8> :call Flake8()<cr>
 
 " Guardar info da sintaxe desde o inicio do arquivo (nao se perde, fica lento)
 syn sync fromstart
@@ -265,11 +265,10 @@ map ; :
 inoremap ;; <ESC>
 
 hi    Search ctermbg=black ctermfg=gray
-hi IncSearch ctermbg=blue ctermfg=black
-hi Visual term=reverse cterm=reverse ctermfg=black ctermbg=gray
+hi IncSearch ctermbg=black ctermfg=gray
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
-hi CursorLine cterm=bold ctermfg=none ctermbg=none
+hi CursorLine ctermbg=black
 set cursorline
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
