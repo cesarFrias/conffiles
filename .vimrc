@@ -59,8 +59,9 @@ Plugin 'kablamo/vim-git-log'
 Plugin 'yegappan/greplace'
 Plugin 'aquach/vim-http-client'
 Plugin 'slim-template/vim-slim'
+Plugin 'lepture/vim-jinja'
 
-" All of your Plugins must be added before the following line
+"All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -264,11 +265,11 @@ vnoremap <Leader>y "+y
 map ; :
 inoremap ;; <ESC>
 
-hi    Search ctermbg=black ctermfg=gray
-hi IncSearch ctermbg=black ctermfg=gray
+hi Search ctermbg=blue ctermfg=black
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 hi CursorLine ctermbg=black
+hi MBENormal ctermfg=white
 set cursorline
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
@@ -289,7 +290,7 @@ let g:ctrlp_max_files = 0
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
 let g:ackhighlight = 1
-let g:ack_use_dispatch = 1
+let g:ack_use_dispatch = 0
 
 " Syntastic Checkers
 let g:syntastic_ruby_checkers = ['rubocop']
