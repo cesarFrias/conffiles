@@ -60,7 +60,6 @@ Plugin 'yegappan/greplace'
 Plugin 'aquach/vim-http-client'
 Plugin 'slim-template/vim-slim'
 Plugin 'lepture/vim-jinja'
-Plugin 'tacahiroy/ctrlp-ssh'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -260,7 +259,6 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-map <Leader>ss :CtrlPSSH<CR>
 let g:spec_command = "Dispatch RAILS_ENV=test bundle exec rspec {spec}"
 vnoremap <Leader>y "+y
 
@@ -288,7 +286,6 @@ let g:airline_powerline_fonts = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
-let g:ctrlp_extensions = ['ssh']
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
