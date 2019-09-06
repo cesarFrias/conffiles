@@ -60,7 +60,6 @@ Plugin 'yegappan/greplace'
 Plugin 'aquach/vim-http-client'
 Plugin 'slim-template/vim-slim'
 Plugin 'lepture/vim-jinja'
-Plugin 'tacahiroy/ctrlp-ssh'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
