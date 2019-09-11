@@ -287,7 +287,6 @@ let g:airline_powerline_fonts = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
-let g:ctrlp_extensions = ['ssh']
 
 let g:ackprg =
       \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
