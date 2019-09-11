@@ -60,7 +60,7 @@ Plugin 'yegappan/greplace'
 Plugin 'aquach/vim-http-client'
 Plugin 'slim-template/vim-slim'
 Plugin 'lepture/vim-jinja'
-Plugin 'tacahiroy/ctrlp-ssh'
+Plugin 'ekalinin/Dockerfile.vim'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -260,7 +260,6 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-map <Leader>ss :CtrlPSSH<CR>
 let g:spec_command = "Dispatch RAILS_ENV=test bundle exec rspec {spec}"
 vnoremap <Leader>y "+y
 
