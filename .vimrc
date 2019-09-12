@@ -242,7 +242,7 @@ nmap <f2> :call ToggleFold()<CR>
 vmap <f2> zf<cr>
 
 let mapleader=" "
-map <Leader>t :Dispatch ctags -R .<CR>
+map <Leader>t :Dispatch ctags --python-kinds=-i -R .<CR>
 map <Leader>p :CtrlPTag <CR>
 map <Leader>rc :vsplit $MYVIMRC<CR>
 map <Leader>ac :Ack!<space>
