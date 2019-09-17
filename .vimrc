@@ -105,6 +105,7 @@ let NERDTreeWinSize = 30
 
 map <F6> :TagbarToggle<CR>
 let g:tagbar_width = 25
+let g:tagbar_sort = 0
 
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
