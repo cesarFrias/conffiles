@@ -104,10 +104,6 @@ map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$', '\.gem$', '__pycache__', 'htmlcov', '\.mo$']
 let NERDTreeWinSize = 30
 
-map <F6> :TagbarToggle<CR>
-let g:tagbar_width = 25
-let g:tagbar_sort = 0
-
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
 nmap N Nzz
@@ -304,17 +300,19 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <F7> :SyntasticCheck<CR>:redraw!<CR>
 
-let g:tagbar_updateonsave_maxlines = 1000
 let g:sneak#streak = 1
 let g:golden_ratio_autocommand = 0
 au VimEnter * GoldenRatioToggle
-
 
 let wiki_1 = {}
 let wiki_1.path = '~/vimwiki/'
 let wiki_1.html_template = 'bootstrap.tpl'
 let g:vimwiki_list = [wiki_1]
 
+map <F6> :TagbarToggle<CR>
+let g:tagbar_width = 25
+let g:tagbar_sort = 0
+let g:tagbar_updateonsave_maxlines = 1000
 let g:tagbar_type_javascript = {
   \ 'ctagstype': 'JavaScript',
   \ 'kinds': [
