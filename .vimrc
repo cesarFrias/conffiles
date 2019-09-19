@@ -61,6 +61,7 @@ Plugin 'aquach/vim-http-client'
 Plugin 'slim-template/vim-slim'
 Plugin 'lepture/vim-jinja'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elzr/vim-json'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,6 +168,7 @@ syn sync minlines=500   "nao faco ideia
 au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 au BufNewFile,BufRead *empresa_conf set ft=sh "spell
+au! BufRead,BufNewFile *.json set filetype=json
 
 au FileType ruby set ts=2 sw=2 tw=100 et si
 au FileType ruby syn keyword Debug byebug
@@ -326,3 +328,13 @@ let g:tagbar_type_javascript = {
     \ 'e:enums',
   \ ]
 \ }
+
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  autocmd FileType json set foldmethod=syntax
+augroup END
