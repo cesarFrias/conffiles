@@ -271,6 +271,7 @@ hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 hi CursorLine ctermbg=black
 hi MBENormal ctermfg=white
+hi diffAdd ctermfg=DarkGreen ctermbg=None
 hi diffAdded ctermfg=DarkGreen
 hi diffRemoved ctermfg=Red
 set cursorline
