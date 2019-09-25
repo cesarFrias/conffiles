@@ -63,6 +63,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -270,6 +271,8 @@ hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 hi CursorLine ctermbg=black
 hi MBENormal ctermfg=white
+hi diffAdded ctermfg=DarkGreen
+hi diffRemoved ctermfg=Red
 set cursorline
 
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
