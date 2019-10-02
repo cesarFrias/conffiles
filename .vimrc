@@ -62,6 +62,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'lepture/vim-jinja'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
+Plugin 'qxxxb/vim-searchhi'
 
 
 "All of your Plugins must be added before the following line
@@ -266,7 +267,9 @@ vnoremap <Leader>y "+y
 map ; :
 inoremap ;; <ESC>
 
-hi Search ctermbg=blue ctermfg=black
+hi Search ctermbg=gray ctermfg=black
+hi IncSearch ctermbg=gray ctermfg=black
+hi CurrentSearch ctermbg=darkgray ctermfg=white
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 hi CursorLine ctermbg=black
