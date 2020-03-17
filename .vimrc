@@ -124,7 +124,6 @@ set title                       "Mostra titulo do arquivo
 set sm                          "ShowMatch: mostra o par do parenteses/chaves recem fechado
 set hid                         "HIDden: undo mesmo depois de trocar de buffer
 set ai                          "AutoIndent: identacao automatica
-set ts=4                        "TabStop: numero de caracteres de avanco do TAB
 set report=0                    "reporta acoes com linhas
 set shm=filmnrwxt               "SHortMessages: encurta as mensagem do rodape
 set et                          "ExpandTab: troca TABs por espacos
@@ -184,6 +183,8 @@ au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python hi pythonUniString ctermfg=lightgreen
 " au FileType python map <buffer> <F8> :call Flake8()<cr>
+
+au BufNewFile,BufRead *.js set ts=2 sw=2 tw=100 et si
 
 " Guardar info da sintaxe desde o inicio do arquivo (nao se perde, fica lento)
 syn sync fromstart
@@ -267,9 +268,9 @@ vnoremap <Leader>y "+y
 map ; :
 inoremap ;; <ESC>
 
-hi Search ctermbg=gray ctermfg=black
-hi IncSearch ctermbg=gray ctermfg=black
-hi CurrentSearch ctermbg=darkgray ctermfg=white
+hi Search ctermfg=darkblue
+hi IncSearch ctermfg=yellow ctermbg=none
+hi CurrentSearch ctermfg=green
 hi LineNr ctermfg=gray ctermbg=black
 hi CursorLineNr ctermfg=darkblue ctermbg=black
 hi CursorLine ctermbg=black
@@ -295,7 +296,7 @@ let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
 
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-file=is:tags"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir node_modules/ --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-dir __pycache__/ --ignore-file=is:tags"
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 0
 
