@@ -80,7 +80,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-source ~/.db_connections
+if filereadable('~/.db_connections')
+       	source ~/.db_connections
+endif
+
 " Guarda posicao do cursor e historico da linha de comando :
 set viminfo='10,\"30,:40,%,n~/.viminfo
 au BufReadPost * if line("'\"")|execute("normal `\"")|endif
