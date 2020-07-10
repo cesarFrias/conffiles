@@ -63,6 +63,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 Plugin 'qxxxb/vim-searchhi'
+Plugin 'irrationalistic/vim-tasks'
 
 
 "All of your Plugins must be added before the following line
@@ -81,7 +82,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 if filereadable('~/.db_connections')
-       	source ~/.db_connections
+        source ~/.db_connections
 endif
 
 " Guarda posicao do cursor e historico da linha de comando :
@@ -108,6 +109,8 @@ map <F4> :NERDTreeFind<return>
 map <F5> :NERDTreeToggle<return>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.xls.*$', '\tags$', '\.gem$', '__pycache__', 'htmlcov', '\.mo$']
 let NERDTreeWinSize = 30
+
+let g:miniBufExplBuffersNeeded = 1
 
 " Faz os resultados da busca aparecerem no meio da tela
 nmap n nzz
@@ -138,7 +141,7 @@ set bs=2                        "comportamento do backspace
 set visualbell                  "pisca a tela ao inves de bipar
 set nojoinspaces                "! coloca 2 espacos apos o . quando usando o gq
 set sw=4                        "numero de colunas para o comando > (ShiftWidth)
-set wildmode=longest,list:full  "para completacao do TAB igual bash
+"set wildmode=longest,list:full  "para completacao do TAB igual bash
 set number                      "mostra o numero de linhas
 set mouse=a                     "habilita o uso do mouse
 set statusline+=%{virtualenv#statusline()} "Coloca o nome do virtualenv ativado na barra de status
@@ -165,7 +168,6 @@ syn sync minlines=500   "nao faco ideia
 
 
 " TXT: Arquivos texto tem tratamento especial
-au BufNewFile,BufRead *.txt   set tw=120 ts=4 ft=txt "spell
 au BufNewFile,BufRead *README,*NEWS,*TODO set ft=txt "spell
 au BufNewFile,BufRead *empresa_conf set ft=sh "spell
 au! BufRead,BufNewFile *.json set filetype=json
@@ -177,15 +179,12 @@ au FileType ruby hi Debug ctermfg=yellow
 " Python: TAB colorido e outras configuracoes
 au FileType python set ts=4 tw=100 et
 au FileType python syn match pythonTAB '\t\+'
-"Mostra caracteres que passaram de 79 colunas
-" au FileType python highlight OverLength ctermfg=red
-" au FileType python match OverLength /\%80v.*/
 "Shift+Tab funcionando como <
 au FileType python inoremap <S-Tab> :<<cr>i
 au FileType python hi pythonString ctermfg=lightgreen
 au FileType python hi pythonRawString ctermfg=lightgreen
 au FileType python hi pythonUniString ctermfg=lightgreen
-" au FileType python map <buffer> <F8> :call Flake8()<cr>
+au FileType python syn keyword pythonTodo contained NOTE QUESTION
 
 au BufNewFile,BufRead *.js set ts=2 sw=2 tw=100 et si
 
@@ -258,6 +257,8 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>wa :VimwikiAll2HTML<CR>
 " Mapeamento para executar PymodeLintAuto
 map <Leader>pla :PymodeLintAuto<cr>zz
+" open location list (Show pymode errors and warnings)
+map <Leader>lo :lopen <cr>
 
 " RSpec.vim mappings
 map <Leader>f :call RunCurrentSpecFile()<CR>
@@ -297,9 +298,9 @@ let g:airline_powerline_fonts = 1
 let g:golden_ratio_exclude_nonmodifiable = 1
 let g:ctrlp_custom_ignore = '\v\.(pyc)$|spec|htmlcov|public|\v\.(mo)$'
 let g:ctrlp_max_files = 0
-
+let g:pydocstring_doq_path = '/usr/local/bin/doq'
 let g:ackprg =
-      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir node_modules/ --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-dir __pycache__/ --ignore-file=is:tags"
+      \ "ack -H --nocolor --nogroup --column --smart-case --follow --ignore-dir logs --ignore-dir node_modules/ --ignore-dir docs/ --ignore-dir migrations/ --ignore-dir media/ --ignore-dir static/ --ignore-dir log/ --ignore-dir coverage/ --ignore-dir htmlcov/ --ignore-dir vendor/ --ignore-dir spec/ --ignore-dir __pycache__/ --ignore-file=is:tags"
 let g:ackhighlight = 1
 let g:ack_use_dispatch = 0
 

@@ -50,15 +50,29 @@ alias log_fuderoso='git log --graph --oneline --decorate'
 alias ks='ls'
 
 
+alias luthieria='workon luthieria'
+alias lu=luthieria
+alias simple-calc='cd ~/.local/share/gnome-shell/extensions/simple-calculator@cagfrias.gmail.com/'
+
 alias aprovometro='cd ~/Workspace/Parafernalha/aprovometro/'
 alias fabriq='cd ~/Workspace/Parafernalha/fabric/'
 alias bfix='cd ~/Workspace/Parafernalha/bitbucket-bfix-backend/'
 alias jota-backend='cd ~/Workspace/Parafernalha/jota-backend/'
-alias luthieria='workon luthieria'
+
+alias infra='cd ~/Workspace/Cultura/infra/; docker-compose -f docker-compose.basic.yml up -d'
+alias vtex-adapter='cd ~/Workspace/Cultura/vtex-adapter/; pipenv shell'
+alias sitef-adapter='cd ~/Workspace/Cultura/sitef-adapter/; pipenv shell'
+alias buzzina='cd ~/Workspace/Cultura/buzzina/; pipenv shell'
+alias ev-adapter='cd ~/Workspace/Cultura/ev-adapter/; pipenv shell'
+alias pedido-port='cd ~/Workspace/Cultura/pedido-port/; pipenv shell'
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 export WORKON_HOME=$HOME/.virtualenvs/
 source /usr/local/bin/virtualenvwrapper.sh
 
-alias docker_cgroups='sudo mkdir /sys/fs/cgroup/systemd && sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd'
+alias start_docker='sudo mkdir /sys/fs/cgroup/systemd && sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd && sudo systemctl start docker'
+
+export PATH="/home/cesarfrias/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
